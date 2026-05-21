@@ -14,7 +14,7 @@ import heroFallback from "@/assets/rollrasen-hero.webp";
  * - Headline: zentriert, parallaxt mit dem Scroll, fade-out.
  * - CTAs: zentriert unter der Headline, bleiben beim Scrollen still ("fixiert").
  */
-const FRAME_COUNT = 90;
+const FRAME_COUNT = 80;
 const SCRUB_END = 1.0; // Frame-Scrub bis zum Ende — kein Stillstand auf letztem Frame
 const FADE_START = 0.45; // Verlauf gleitet parallel zum letzten Drittel des Scrubs ein
 
