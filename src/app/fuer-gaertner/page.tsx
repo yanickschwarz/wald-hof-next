@@ -11,7 +11,7 @@ import FaqAccordion from "@/components/editorial/FaqAccordion";
 import SeoHead from "@/components/editorial/SeoHead";
 import ParallaxHero from "@/components/editorial/ParallaxHero";
 import lager from "@/assets/rollrasen-palette.jpg";
-import transport from "@/assets/rollrasen-palette.jpg";
+import autoWaldhof from "@/assets/auto-waldhof.webp";
 import ernte from "@/assets/rollrasen-ernte-new.jpg";
 import schweiz from "@/assets/hero-fuer-gaertner.webp";
 import gaertnerTeam from "@/assets/gaertner-team.webp";
@@ -111,10 +111,14 @@ export default function FuerGaertner() {
 
       {/* Bildband */}
       <section className="grid grid-cols-1 gap-px bg-ink/15 md:grid-cols-3">
-        {[ernte, lager, transport].map((src, i) => (
+        {[
+          { src: ernte, alt: "Frisch geernteter Rollrasen vom Waldhof, gerollt und bereit zum Transport" },
+          { src: lager, alt: "Paletten mit Rollrasen im Lager des Waldhofs in Wiler" },
+          { src: autoWaldhof, alt: "Wald-Hof-Lieferfahrzeug mit Anhänger unterwegs in den Schweizer Alpen" },
+        ].map((img, i) => (
           <Reveal key={i} variant="mask">
             <figure className="aspect-[4/5] overflow-hidden bg-cream md:aspect-[3/4]">
-              <img src={src.src} alt="" loading="lazy" className="h-full w-full object-cover" />
+              <img src={img.src.src} alt={img.alt} loading="lazy" className="h-full w-full object-cover" />
             </figure>
           </Reveal>
         ))}

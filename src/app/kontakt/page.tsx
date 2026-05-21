@@ -6,7 +6,7 @@ import SeoHead from "@/components/editorial/SeoHead";
 import ParallaxHero from "@/components/editorial/ParallaxHero";
 import Magnetic from "@/components/Magnetic";
 import { BestellTrigger } from "@/components/BestellModal";
-import transport from "@/assets/rollrasen-transport.webp";
+import autoWaldhof from "@/assets/auto-waldhof.webp";
 
 /**
  * /kontakt — Kontaktdaten + Google-Maps-Karte (Embed, kein API-Key nötig).
@@ -21,8 +21,8 @@ export default function Kontakt() {
       />
 
       <ParallaxHero
-        image={transport}
-        alt="Pickup mit Anhänger 'Rasen vom Waldhof' liefert in den Schweizer Bergen"
+        image={autoWaldhof}
+        alt="Schwarzer Pickup mit Wald-Hof-Branding und Anhänger auf einer Schweizer Passstrasse"
         title={<>Direkter Draht<br /><em className="italic font-light text-glow">zum Hof.</em></>}
         ctas={
           <>

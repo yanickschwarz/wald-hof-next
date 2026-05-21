@@ -46,7 +46,7 @@ const Index = () => {
             </Reveal>
           </div>
 
-          <div className="col-span-12 mt-14 grid grid-cols-1 gap-px bg-ink/10 md:mt-20 md:grid-cols-3">
+          <div className="col-span-12 mt-14 grid grid-cols-1 md:mt-20 md:grid-cols-3">
             <Reveal><Stat number="2 Sorten" label="Haus- und Allzweckrasen & Mini-Kräuter-Flora" /></Reveal>
             <Reveal delay={120}><Stat number="24–48h" label="Heute bestellt, morgen abholbereit oder übermorgen geliefert" /></Reveal>
             <Reveal delay={240}><Stat number="März–Nov" label="Liefer- und Erntesaison in der Schweiz" /></Reveal>
