@@ -25,9 +25,12 @@ export default function Header() {
   const pathname = usePathname();
   const heroBig = !scrolled;
   const isHome = pathname === "/";
-  // Hell (bg) nur im Hero der Startseite. Sobald gescrollt wird oder auf
-  // Unterseiten: dunkel (ink), damit das Logo immer lesbar bleibt.
-  const logoVariant = heroBig && isHome ? "bg" : "ink";
+  // Im Hero:
+  //   - Startseite → dunkel (ink), passt auf den papierhellen Hintergrund
+  //   - Unterseiten → hell (bg), für gute Lesbarkeit über den dunklen/farbigen Hero-Bildern
+  // Sobald gescrollt wird, ist das Logo immer dunkel (ink), damit es auf dem
+  // hellen Seiteninhalt sichtbar bleibt.
+  const logoVariant = heroBig ? (isHome ? "ink" : "bg") : "ink";
 
   useEffect(() => {
     const onScroll = () => {
