@@ -56,7 +56,8 @@ export default function CurvyStepper({ steps }: Props) {
       setProgress(1);
       return;
     }
-    const onScroll = () => {
+    let ticking = false;
+    const compute = () => {
       const node = wrapRef.current;
       if (!node) return;
       const rect = node.getBoundingClientRect();
@@ -68,8 +69,14 @@ export default function CurvyStepper({ steps }: Props) {
       const span = total + (start - end);
       const p = scrolled / span;
       setProgress(Math.min(1, Math.max(0, p)));
+      ticking = false;
     };
-    onScroll();
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(compute);
+    };
+    compute();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
     return () => {
@@ -80,12 +87,19 @@ export default function CurvyStepper({ steps }: Props) {
 
   const drawn = pathLen * progress;
 
-  // Pro-Step-Aktivierung: Schritt i ist "aktiv", sobald der Linien-Progress
-  // die Position dieses Schrittes erreicht hat. Schwelle leicht unter dem
-  // Punkt, damit die Karte schon einsteigt, kurz bevor die Linie ankommt.
-  const stepThresholds = steps.map((_, i) =>
-    steps.length === 1 ? 0 : Math.max(0, (i / (steps.length - 1)) - 0.08)
-  );
+  // Pro-Step-Aktivierung: Schritt i wird aktiv, sobald der Linien-Progress
+  // diese Schwelle überschreitet. Die Schwellen liegen bewusst deutlich VOR
+  // dem geometrischen Position des Knotens (i / (n-1)), damit die Punkte
+  // früh und großzügig aufploppen — nicht erst, wenn der User schon halb
+  // durch ist. Schritt 1 ist von Anfang an sichtbar.
+  //
+  // Für 4 Schritte ergibt das die Schwellen [0%, 14%, 32%, 50%] — d.h. der
+  // letzte Schritt poppt bereits bei der Hälfte der Sektion auf.
+  const stepThresholds = steps.map((_, i) => {
+    if (i === 0) return 0;
+    if (steps.length === 1) return 0;
+    return (i / (steps.length - 1)) * 0.5 - 0.02;
+  });
 
   return (
     <div ref={wrapRef} className="relative mx-auto max-w-5xl">
@@ -112,7 +126,6 @@ export default function CurvyStepper({ steps }: Props) {
           vectorEffect="non-scaling-stroke"
           strokeDasharray={pathLen || 1}
           strokeDashoffset={pathLen ? pathLen - drawn : 0}
-          style={{ transition: reducedMotion ? "none" : "stroke-dashoffset 200ms ease-out" }}
         />
       </svg>
 
