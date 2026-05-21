@@ -151,9 +151,6 @@ export default function Rollrasen() {
       {/* CTA-Block */}
       <section className="bg-ink py-24 text-bg md:py-36">
         <div className="mx-auto grid max-w-none grid-cols-12 gap-x-6 gap-y-10 px-6 md:px-10">
-          <div className="col-span-12 md:col-span-2">
-            <p className="eyebrow text-bg/60">Nächster Schritt</p>
-          </div>
           <div className="col-span-12 md:col-span-7">
             <Reveal>
               <h2 className="h-section">
@@ -190,7 +187,6 @@ export default function Rollrasen() {
       <section className="py-24 md:py-36">
         <div className="mx-auto grid max-w-none grid-cols-12 gap-x-6 gap-y-10 px-6 md:px-10">
           <div className="col-span-12 md:col-span-3">
-            <p className="eyebrow text-ink/55">Fragen / Antworten</p>
             <h2 className="h-section mt-6 text-ink">Häufig gefragt</h2>
           </div>
           <div className="col-span-12 md:col-span-9">

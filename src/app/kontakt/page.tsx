@@ -49,7 +49,6 @@ export default function Kontakt() {
       <section className="border-t border-ink/15 py-20 md:py-28">
         <div className="mx-auto grid max-w-none grid-cols-12 gap-x-6 gap-y-12 px-6 md:px-10">
           <Reveal className="col-span-12 md:col-span-5">
-            <p className="eyebrow text-ink/55">Adresse</p>
             <p className="mt-4 font-display text-3xl leading-tight md:text-5xl">
               Rasen vom Waldhof<br />
               Zielebachweg 6<br />

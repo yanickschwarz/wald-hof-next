@@ -23,10 +23,7 @@ export default function NotFound() {
       />
       <section className="grid min-h-[88vh] place-items-center bg-bg pt-32">
         <div className="mx-auto grid max-w-none grid-cols-12 gap-x-6 px-6 md:px-10">
-          <div className="col-span-12 md:col-span-2">
-            <p className="eyebrow text-ink/55">Sackgasse</p>
-          </div>
-          <div className="col-span-12 md:col-span-10">
+          <div className="col-span-12">
             <p
               className="font-display leading-[0.85] text-moss"
               style={{ fontSize: "clamp(8rem, 28vw, 28rem)", letterSpacing: "-0.05em" }}

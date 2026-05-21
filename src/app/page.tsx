@@ -20,14 +20,10 @@ const Index = () => {
 
 
 
-      {/* 02 / Produkt */}
+      {/* Produkt */}
       <section className="relative bg-bg" aria-labelledby="intro-heading">
         <div className="mx-auto grid max-w-none grid-cols-12 gap-x-6 gap-y-12 px-6 py-28 md:px-10 md:py-40">
-          <div className="col-span-12 md:col-span-2">
-            <Reveal><p className="eyebrow text-ink/50">02 / Produkt</p></Reveal>
-          </div>
-
-          <div className="col-span-12 md:col-span-9">
+          <div className="col-span-12 md:col-span-11">
             <Reveal>
               <h2 id="intro-heading" className="h-section text-balance text-ink">
                 Ein lebendiges Produkt,<br />
@@ -90,10 +86,7 @@ const Index = () => {
       {/* 03 / Partner — Für Gärtner Kurzabschnitt */}
       <section className="relative bg-bg" aria-labelledby="gartner-heading">
         <div className="mx-auto grid max-w-none grid-cols-12 gap-6 px-6 py-28 md:px-10 md:py-40">
-          <div className="col-span-12 md:col-span-2">
-            <Reveal><p className="eyebrow text-ink/50">03 / Partner</p></Reveal>
-          </div>
-          <div className="col-span-12 md:col-span-7">
+          <div className="col-span-12 md:col-span-8">
             <Reveal>
               <h2 id="gartner-heading" className="h-section text-ink">
                 Für Gartenbau-<em className="font-light italic">Betriebe.</em>
@@ -111,7 +104,7 @@ const Index = () => {
               </div>
             </Reveal>
           </div>
-          <div className="col-span-12 md:col-span-3 md:pt-6">
+          <div className="col-span-12 md:col-span-4 md:pt-6">
             <Reveal delay={150}>
               <ul className="space-y-5 border-l border-ink/15 pl-6 text-sm text-ink/80">
                 <li><span className="block font-display text-2xl text-ink">Tagesfrisch</span>Heute bestellt, morgen ab Hof oder übermorgen geliefert.</li>
@@ -129,10 +122,7 @@ const Index = () => {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/10 via-ink/40 to-ink/80" aria-hidden />
         <div className="absolute inset-0 flex items-end">
           <div className="mx-auto grid w-full max-w-none grid-cols-12 gap-x-6 gap-y-8 px-6 pb-16 md:px-10 md:pb-24">
-            <div className="col-span-12 md:col-span-2">
-              <Reveal><p className="eyebrow text-bg/70">04 / Über uns</p></Reveal>
-            </div>
-            <div className="col-span-12 md:col-span-7">
+            <div className="col-span-12 md:col-span-9">
               <Reveal>
                 <h2 id="ueber-heading" className="h-section text-bg drop-shadow-md">
                   Vom Hof in <em className="font-light italic text-glow">Wiler</em> in Ihren Garten.

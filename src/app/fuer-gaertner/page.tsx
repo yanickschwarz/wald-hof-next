@@ -84,14 +84,12 @@ export default function FuerGaertner() {
       <section className="py-24 md:py-36">
         <div className="mx-auto grid max-w-none grid-cols-12 gap-x-6 gap-y-16 px-6 md:px-10">
           <div className="col-span-12 md:col-span-3">
-            <p className="eyebrow text-ink/55">Was uns auszeichnet</p>
             <h2 className="h-section mt-6">Unkompliziert. Flexibel. Schnell.</h2>
           </div>
           <ul className="col-span-12 md:col-span-9 grid gap-px bg-ink/15 md:grid-cols-2">
             {benefits.map((b) => (
               <li key={b.title} className="bg-bg p-8 md:p-10">
                 <Reveal>
-                  <p className="eyebrow text-moss">{b.kicker}</p>
                   <h3 className="font-display mt-4 text-3xl tracking-tight">{b.title}</h3>
                   <p className="mt-4 max-w-md text-base leading-relaxed text-ink/75">{b.body}</p>
                 </Reveal>
@@ -128,7 +126,6 @@ export default function FuerGaertner() {
       <section className="py-24 md:py-36">
         <div className="mx-auto grid max-w-none grid-cols-12 gap-x-6 gap-y-10 px-6 md:px-10">
           <div className="col-span-12 md:col-span-3">
-            <p className="eyebrow text-ink/55">Konditionen</p>
             <h2 className="h-section mt-6">Spezialpreise<br />auf Anfrage</h2>
           </div>
           <div className="col-span-12 md:col-span-9">
@@ -157,7 +154,6 @@ export default function FuerGaertner() {
       <section className="bg-ink py-24 text-bg md:py-32">
         <div className="mx-auto max-w-[1100px] px-6 text-center md:px-10">
           <Reveal>
-            <p className="eyebrow text-bg/60">Nächster Schritt</p>
             <h2 className="h-section mt-6">Lassen Sie uns reden.</h2>
             <p className="mx-auto mt-6 max-w-xl text-lg text-bg/75">
               Schicken Sie uns eine kurze Nachricht oder rufen Sie direkt an — Hans Vögeli persönlich.
@@ -179,7 +175,6 @@ export default function FuerGaertner() {
       <section className="py-24 md:py-32">
         <div className="mx-auto grid max-w-none grid-cols-12 gap-x-6 gap-y-10 px-6 md:px-10">
           <div className="col-span-12 md:col-span-3">
-            <p className="eyebrow text-ink/55">Häufig gefragt</p>
             <h2 className="h-section mt-6">B2B-FAQ</h2>
           </div>
           <div className="col-span-12 md:col-span-9">

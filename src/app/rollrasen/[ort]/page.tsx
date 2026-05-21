@@ -67,7 +67,6 @@ export default function LokalLanding() {
       <section className="py-24 md:py-32">
         <div className="mx-auto grid max-w-none grid-cols-12 gap-x-6 gap-y-12 px-6 md:px-10">
           <div className="col-span-12 md:col-span-3">
-            <p className="eyebrow text-ink/55">Warum Waldhof in {data.name}?</p>
             <h2 className="h-section mt-6">Kurze Wege, frische Ware.</h2>
           </div>
           <ul className="col-span-12 grid gap-px bg-ink/15 md:col-span-9 md:grid-cols-3">

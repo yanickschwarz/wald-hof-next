@@ -2,8 +2,10 @@ import { ReactNode } from "react";
 import Reveal from "./Reveal";
 
 interface EditorialHeroProps {
-  number: string;
-  eyebrow: string;
+  /** Beibehalten für Abwärtskompatibilität, wird aber nicht mehr gerendert. */
+  number?: string;
+  /** Beibehalten für Abwärtskompatibilität, wird aber nicht mehr gerendert. */
+  eyebrow?: string;
   title: ReactNode;
   subline?: ReactNode;
   rightSlot?: ReactNode;
@@ -14,11 +16,12 @@ interface EditorialHeroProps {
 
 /**
  * Wiederverwendbarer Editorial-Hero für alle Inhaltsseiten.
- * Layout: Sektionsnummer links · Display-Headline mittig · optional Bild/Slot rechts.
+ * Layout: Display-Headline · optional Bild/Slot rechts.
+ * Hinweis: Die früheren Eyebrow-Labels ("01 / Sortiment" etc.) wurden bewusst
+ * entfernt; die Props bleiben in der Signatur, damit bestehende Page-Aufrufe
+ * nicht angepasst werden müssen.
  */
 export default function EditorialHero({
-  number,
-  eyebrow,
   title,
   subline,
   rightSlot,
@@ -26,16 +29,12 @@ export default function EditorialHero({
   titleAs = "h1",
 }: EditorialHeroProps) {
   const bgCls = bg === "ink" ? "bg-ink text-bg" : bg === "cream" ? "bg-cream/50" : "bg-bg";
-  const accent = bg === "ink" ? "text-bg/60" : "text-ink/50";
   const text = bg === "ink" ? "text-bg" : "text-ink";
   const TitleTag = titleAs;
   return (
     <section className={`relative ${bgCls} pt-36 md:pt-44`}>
       <div className="mx-auto grid max-w-none grid-cols-12 gap-x-6 gap-y-10 px-6 pb-20 md:px-10 md:pb-28">
-        <div className="col-span-12 md:col-span-2">
-          <Reveal><p className={`eyebrow ${accent}`}>{number} / {eyebrow}</p></Reveal>
-        </div>
-        <div className={`col-span-12 ${rightSlot ? "md:col-span-6" : "md:col-span-9"} ${text}`}>
+        <div className={`col-span-12 ${rightSlot ? "md:col-span-8" : "md:col-span-11"} ${text}`}>
           <Reveal>
             <TitleTag className="h-display text-balance">{title}</TitleTag>
           </Reveal>

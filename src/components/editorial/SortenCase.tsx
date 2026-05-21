@@ -46,8 +46,7 @@ export default function SortenCase({
         {/* Text */}
         <div className="col-span-12 md:col-span-5 [direction:ltr]">
           <Reveal>
-            <p className="eyebrow text-ink/50">{index} / Sorte</p>
-            <h2 className="h-section mt-4 text-ink">{name}</h2>
+            <h2 className="h-section text-ink">{name}</h2>
             <p className="mt-4 max-w-md font-display text-2xl italic text-moss">
               {tagline}
             </p>

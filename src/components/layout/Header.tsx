@@ -24,6 +24,10 @@ export default function Header() {
   const ticking = useRef(false);
   const pathname = usePathname();
   const heroBig = !scrolled;
+  const isHome = pathname === "/";
+  // Hell (bg) nur im Hero der Startseite. Sobald gescrollt wird oder auf
+  // Unterseiten: dunkel (ink), damit das Logo immer lesbar bleibt.
+  const logoVariant = heroBig && isHome ? "bg" : "ink";
 
   useEffect(() => {
     const onScroll = () => {
@@ -72,10 +76,13 @@ export default function Header() {
           >
             <Logo
               className={cn(
-                "h-16 w-16 md:h-20 md:w-20 origin-left transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.1,1)] will-change-transform",
-                heroBig ? "scale-[2]" : "scale-100",
+                "h-16 w-16 md:h-20 md:w-20 origin-top-left transition-[transform,margin] duration-500 ease-[cubic-bezier(0.4,0,0.1,1)] will-change-transform",
+                // Im Hero gross + nach unten/rechts geschoben, damit das skalierte
+                // Logo nicht oben/links abgeschnitten wird. Beim Scrollen zurück
+                // auf 1x ohne Versatz.
+                heroBig ? "scale-[2] ml-4 mt-4 md:ml-6 md:mt-6" : "scale-100 ml-0 mt-0",
               )}
-              variant={heroBig ? "bg" : "ink"}
+              variant={logoVariant}
             />
           </Link>
 

@@ -108,7 +108,6 @@ export default function RollrasenVerlegen() {
       <section className="py-24 md:py-32">
         <div className="mx-auto grid max-w-none grid-cols-12 gap-x-6 gap-y-12 px-6 md:px-10">
           <div className="col-span-12 md:col-span-3">
-            <p className="eyebrow text-ink/55">Praxistipps</p>
             <h2 className="h-section mt-6">Was wirklich zählt</h2>
           </div>
           <ul className="col-span-12 grid gap-px bg-ink/15 md:col-span-9 md:grid-cols-2">
@@ -131,7 +130,6 @@ export default function RollrasenVerlegen() {
       <section className="border-t border-ink/15 py-24 md:py-32">
         <div className="mx-auto grid max-w-none grid-cols-12 gap-x-6 gap-y-10 px-6 md:px-10">
           <div className="col-span-12 md:col-span-3">
-            <p className="eyebrow text-ink/55">Fragen / Antworten</p>
             <h2 className="h-section mt-6">Häufig gefragt</h2>
           </div>
           <div className="col-span-12 md:col-span-9">

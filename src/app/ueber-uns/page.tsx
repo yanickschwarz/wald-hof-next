@@ -138,7 +138,6 @@ export default function UeberUns() {
       <section className="border-t border-ink/15 py-24 md:py-36">
         <div className="mx-auto grid max-w-none grid-cols-12 gap-x-6 gap-y-12 px-6 md:px-10">
           <div className="col-span-12 md:col-span-3">
-            <p className="eyebrow text-ink/55">Meilensteine</p>
             <h2 className="h-section mt-6">Vom Hof<br />zur Marke.</h2>
             <p className="mt-6 max-w-sm text-base leading-relaxed text-ink/70">
               Eine kurze Zeitleiste — Stationen, die den Waldhof zu dem gemacht haben, was er heute ist.
@@ -175,7 +174,6 @@ export default function UeberUns() {
           </Reveal>
           <div className="col-span-12 md:col-span-7 md:pl-10">
             <Reveal>
-              <p className="eyebrow text-ink/55">Familienbetrieb</p>
               <h2 className="h-section mt-6">Susanna, Hans,<br />Tim & Mika.</h2>
               <p className="mt-8 max-w-xl text-lg leading-relaxed text-ink/80 md:text-xl">
                 Wir sind ein reiner Familienbetrieb. Zusammen mit meiner Frau Susanna habe ich das Geschäft über die Jahre hinweg aufgebaut. Seit 2017 ist unser ältester Sohn Tim voll im Betrieb tätig, seit 2025 auch unser zweiter Sohn Mika.

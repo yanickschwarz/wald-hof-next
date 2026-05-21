@@ -243,7 +243,6 @@ export default function PreisKonfigurator() {
           <aside className="col-span-12 md:col-span-5 md:sticky md:top-28 md:self-start">
             <Reveal>
               <div className="bg-ink p-8 text-bg md:p-10">
-                <p className="eyebrow text-bg/60">Ihr Richtpreis</p>
                 {calc.total !== null ? (
                   <>
                     <p className="mt-6 font-display leading-[0.9] text-glow" style={{ fontSize: "clamp(3rem, 8vw, 6rem)" }}>
@@ -294,7 +293,6 @@ export default function PreisKonfigurator() {
 
             {/* Hinweis-Box: Gärtner-Spezialpreise */}
             <div className="mt-6 border border-ink/15 bg-cream/60 p-6">
-              <p className="eyebrow text-moss">Für Profis</p>
               <p className="mt-3 text-sm leading-relaxed text-ink/75">
                 Spezialpreise für Gartenbauer und Gärtner auf Anfrage.
               </p>
