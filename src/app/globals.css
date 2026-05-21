@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================
+   RASEN VOM WALDHOF — Design System
+   Editorial · Erdig · Awwwards-niveau
+   All colors HSL.
+   Fonts werden über next/font im RootLayout geladen und als
+   CSS-Variablen --font-fraunces / --font-inter-tight injiziert.
+   ========================================================= */
+
+@layer base {
+  :root {
+    /* Brand palette (HSL) */
+    --bg: 44 30% 94%;            /* #F4F1EA papierartig off-white */
+    --foreground: 120 8% 11%;     /* #1A1F1A ink */
+    --ink: 120 8% 11%;
+    --moss: 108 16% 20%;          /* #2D3B2A primary deep moss */
+    --meadow: 80 21% 45%;         /* #7A8B5C secondary muted meadow */
+    --soil: 28 22% 30%;           /* #5C4A3A earth accent */
+    --cream: 42 28% 87%;          /* #E8E2D3 surfaces */
+    --glow: 75 53% 78%;           /* #D4E4A8 highlight, sparingly */
+
+    /* Shadcn semantic mapping (kept consistent with brand) */
+    --background: var(--bg);
+    --card: var(--cream);
+    --card-foreground: var(--ink);
+    --popover: var(--bg);
+    --popover-foreground: var(--ink);
+    --primary: var(--moss);
+    --primary-foreground: var(--bg);
+    --secondary: var(--cream);
+    --secondary-foreground: var(--ink);
+    --muted: var(--cream);
+    --muted-foreground: 28 12% 35%;
+    --accent: var(--meadow);
+    --accent-foreground: var(--bg);
+    --destructive: 0 60% 45%;
+    --destructive-foreground: var(--bg);
+    --border: 42 18% 80%;
+    --input: 42 18% 80%;
+    --ring: var(--moss);
+    --radius: 0.25rem;
+
+    --sidebar-background: var(--bg);
+    --sidebar-foreground: var(--ink);
+    --sidebar-primary: var(--moss);
+    --sidebar-primary-foreground: var(--bg);
+    --sidebar-accent: var(--cream);
+    --sidebar-accent-foreground: var(--ink);
+    --sidebar-border: 42 18% 80%;
+    --sidebar-ring: var(--moss);
+
+    /* Type — Fallback-Stack; next/font setzt die echte Family über --font-* */
+    --font-display: var(--font-fraunces), 'Fraunces', 'Times New Roman', serif;
+    --font-sans: var(--font-inter-tight), 'Inter Tight', system-ui, sans-serif;
+  }
+
+  .dark { /* not actively designed; mirrors light for fallback */
+    --background: var(--bg);
+    --foreground: var(--ink);
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "ss02", "cv11";
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.02em; }
+  ::selection { background: hsl(var(--moss)); color: hsl(var(--bg)); }
+}
+
+/* =========================================================
+   Editorial utilities
+   ========================================================= */
+@layer utilities {
+  .font-display { font-family: var(--font-display); }
+  .font-sans-tight { font-family: var(--font-sans); }
+
+  .text-balance { text-wrap: balance; }
+
+  /* Display headline scale */
+  .h-display {
+    font-family: var(--font-display);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    font-size: clamp(3rem, 8vw, 9rem);
+  }
+  .h-section {
+    font-family: var(--font-display);
+    font-weight: 350;
+    line-height: 1;
+    letter-spacing: -0.025em;
+    font-size: clamp(2.25rem, 5vw, 4.5rem);
+  }
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .vertical-rl {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  /* Grain / paper texture overlay */
+  .grain::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.045;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  /* Story link underline */
+  .story-link {
+    @apply relative inline-block;
+  }
+  .story-link::after {
+    content: "";
+    @apply absolute left-0 -bottom-0.5 h-px w-full origin-right scale-x-0 bg-current transition-transform duration-500;
+    transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
+  }
+  .story-link:hover::after { @apply origin-left scale-x-100; }
+
+  /* Marquee */
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .marquee-track { animation: marquee 40s linear infinite; }
+
+  /* Letter reveal */
+  @keyframes letter-up {
+    from { transform: translateY(110%); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+  }
+  .letter {
+    display: inline-block;
+    transform: translateY(110%);
+    animation: letter-up 0.9s cubic-bezier(0.6,0,0.05,1) forwards;
+  }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fade-up 1s cubic-bezier(0.4,0,0.1,1) both; }
+
+  .clip-mask-reveal {
+    clip-path: inset(0 0 100% 0);
+    animation: mask-reveal 1.2s cubic-bezier(0.7,0,0.2,1) forwards;
+  }
+  @keyframes mask-reveal {
+    to { clip-path: inset(0 0 0 0); }
+  }
+}
+
+/* Hide native cursor when custom cursor is active (desktop only) */
+@media (hover: hover) and (pointer: fine) {
+  body.has-custom-cursor,
+  body.has-custom-cursor * {
+    cursor: none !important;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .letter, .fade-up, .clip-mask-reveal, .marquee-track {
+    animation: none !important;
+    transform: none !important;
+    clip-path: none !important;
+    opacity: 1 !important;
+  }
+}
