@@ -166,13 +166,13 @@ export default function UeberUns() {
       {/* Portrait Hans + Familie */}
       <section className="border-t border-ink/15 bg-cream/40 py-24 md:py-36">
         <div className="mx-auto grid max-w-none grid-cols-12 gap-x-6 gap-y-12 px-6 md:px-10">
-          <Reveal variant="mask" className="col-span-12">
+          <Reveal variant="mask" className="col-span-12 md:col-span-6">
             <figure className="aspect-[16/9] overflow-hidden bg-cream">
               <img src={portrait.src} alt="Familie Vögeli — Susanna, Hans, Tim und Mika, Rasen vom Waldhof" className="h-full w-full object-cover" loading="lazy" />
               <figcaption className="sr-only">Familie Vögeli — Susanna, Hans, Tim und Mika</figcaption>
             </figure>
           </Reveal>
-          <div className="col-span-12 md:col-span-9 md:pl-0">
+          <div className="col-span-12 md:col-span-6 md:pl-10">
             <Reveal>
               <h2 className="h-section mt-6">Susanna, Hans,<br />Tim & Mika.</h2>
               <p className="mt-8 max-w-xl text-lg leading-relaxed text-ink/80 md:text-xl">
