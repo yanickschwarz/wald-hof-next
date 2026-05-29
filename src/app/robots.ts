@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://www.wald-hof.ch/sitemap.xml",
-    host: "https://www.wald-hof.ch",
+    sitemap: "https://wald-hof.ch/sitemap.xml",
+    host: "https://wald-hof.ch",
   };
 }

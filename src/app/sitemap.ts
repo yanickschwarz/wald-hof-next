@@ -14,7 +14,7 @@ const ORTE = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://www.wald-hof.ch";
+  const base = "https://wald-hof.ch";
   const now = new Date();
 
   const staticRoutes: MetadataRoute.Sitemap = [

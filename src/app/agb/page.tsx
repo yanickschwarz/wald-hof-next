@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "AGB",
+  description:
+    "Allgemeine Geschäftsbedingungen der Rasen vom Waldhof, 3428 Wiler.",
+  alternates: { canonical: "/agb" },
+};
 
 export default function AgbPage() {
   return (
